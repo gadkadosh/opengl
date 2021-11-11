@@ -1,17 +1,18 @@
 [
-  {
-    "arguments": [
-      "/usr/local/opt/llvm/bin/clang++",
-      "-g",
-      "-I./vendor/GLEW/include",
-      "-I./vendor/GLFW/include",
-      "-c",
-      "-o",
-      "build/Application.o",
-      "src/Application.cpp"
-    ],
-    "directory": "/Users/gadkadosh/Code/opengl",
-    "file": "/Users/gadkadosh/Code/opengl/src/Application.cpp",
-    "output": "/Users/gadkadosh/Code/opengl/build/Application.o"
-  }
+    {
+        "arguments": [
+            "/usr/local/opt/llvm/bin/clang++",
+            "-g",
+            "-std=c++17",
+            "-I./vendor/GLEW/include",
+            "-I./vendor/GLFW/include",
+            "-c",
+            "-o",
+            "build/Application.o",
+            "src/Application.cpp"
+        ],
+        "directory": "/Users/gadkadosh/Code/opengl",
+        "file": "/Users/gadkadosh/Code/opengl/src/Application.cpp",
+        "output": "/Users/gadkadosh/Code/opengl/build/Application.o"
+    }
 ]

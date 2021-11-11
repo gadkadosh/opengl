@@ -1,5 +1,5 @@
 CXX=clang++
-CXXFLAGS=-g
+CXXFLAGS=-g -std=c++17
 INCLUDES=-I./vendor/GLEW/include -I./vendor/GLFW/include
 LIBS=-L./vendor/GLEW/lib -lglew -L./vendor/GLFW -lglfw3
 FRAMEWORKS=-framework Cocoa -framework OpenGL -framework IOKit
