@@ -10,7 +10,7 @@ SRCS=$(shell find $(SRC_DIR) -name *.cpp)
 OBJS=$(patsubst $(SRC_DIR)/%.cpp,$(BUILD_DIR)/%.o,$(SRCS))
 
 $(BUILD_DIR)/opengl: $(OBJS)
-	$(CXX) $(CXXFLAGS) $(FRAMEWORKS) $(LIBS) $< -o $@
+	$(CXX) $(CXXFLAGS) $(FRAMEWORKS) $(LIBS) $^ -o $@
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
 	mkdir -p $(BUILD_DIR)
