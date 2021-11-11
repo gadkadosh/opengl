@@ -1,0 +1,48 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-DGLEW_NO_GLU",
+      "-DGLEW_BUILD",
+      "-Os",
+      "-Wall",
+      "-W",
+      "-Iinclude",
+      "-dynamic",
+      "-fno-common",
+      "-pedantic",
+      "-fPIC",
+      "-std=c89",
+      "-c",
+      "-o",
+      "tmp/darwin/default/shared/glew.o",
+      "src/glew.c"
+    ],
+    "directory": "/Users/gadkadosh/Code/opengl/vendor/GLEW",
+    "file": "/Users/gadkadosh/Code/opengl/vendor/GLEW/src/glew.c",
+    "output": "/Users/gadkadosh/Code/opengl/vendor/GLEW/tmp/darwin/default/shared/glew.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-DGLEW_NO_GLU",
+      "-DGLEW_STATIC",
+      "-Os",
+      "-Wall",
+      "-W",
+      "-Iinclude",
+      "-dynamic",
+      "-fno-common",
+      "-pedantic",
+      "-fPIC",
+      "-std=c89",
+      "-c",
+      "-o",
+      "tmp/darwin/default/static/glew.o",
+      "src/glew.c"
+    ],
+    "directory": "/Users/gadkadosh/Code/opengl/vendor/GLEW",
+    "file": "/Users/gadkadosh/Code/opengl/vendor/GLEW/src/glew.c",
+    "output": "/Users/gadkadosh/Code/opengl/vendor/GLEW/tmp/darwin/default/static/glew.o"
+  }
+]

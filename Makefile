@@ -1,10 +1,8 @@
 CXX=clang++
 CXXFLAGS=-g
-INCLUDES=-I./vendor/GLFW/include
-LIBS=-L./vendor/GLFW -lglfw3
+INCLUDES=-I./vendor/GLEW/include -I./vendor/GLFW/include
+LIBS=-L./vendor/GLEW/lib -lglew -L./vendor/GLFW -lglfw3
 FRAMEWORKS=-framework Cocoa -framework OpenGL -framework IOKit
-DEFINES=-DGL_SILENCE_DEPRECATION
-
 
 SRC_DIR=src
 BUILD_DIR=build
@@ -16,7 +14,7 @@ $(BUILD_DIR)/opengl: $(OBJS)
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
 	mkdir -p $(BUILD_DIR)
-	$(CXX) $(CXXFLAGS) $(INCLUDES) $(DEFINES) -c $< -o $@
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
 	rm -r $(BUILD_DIR)
