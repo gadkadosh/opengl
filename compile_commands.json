@@ -40,12 +40,44 @@
       "-I./vendor/GLFW/include",
       "-c",
       "-o",
+      "build/Texture.o",
+      "src/Texture.cpp"
+    ],
+    "directory": "/Users/gadkadosh/Code/opengl",
+    "file": "/Users/gadkadosh/Code/opengl/src/Texture.cpp",
+    "output": "/Users/gadkadosh/Code/opengl/build/Texture.o"
+  },
+  {
+    "arguments": [
+      "/usr/local/opt/llvm/bin/clang++",
+      "-g",
+      "-std=c++17",
+      "-I./vendor/GLEW/include",
+      "-I./vendor/GLFW/include",
+      "-c",
+      "-o",
       "build/Shader.o",
       "src/Shader.cpp"
     ],
     "directory": "/Users/gadkadosh/Code/opengl",
     "file": "/Users/gadkadosh/Code/opengl/src/Shader.cpp",
     "output": "/Users/gadkadosh/Code/opengl/build/Shader.o"
+  },
+  {
+    "arguments": [
+      "/usr/local/opt/llvm/bin/clang++",
+      "-g",
+      "-std=c++17",
+      "-I./vendor/GLEW/include",
+      "-I./vendor/GLFW/include",
+      "-c",
+      "-o",
+      "build/stb_image/stb_image.o",
+      "src/stb_image/stb_image.cpp"
+    ],
+    "directory": "/Users/gadkadosh/Code/opengl",
+    "file": "/Users/gadkadosh/Code/opengl/src/stb_image/stb_image.cpp",
+    "output": "/Users/gadkadosh/Code/opengl/build/stb_image/stb_image.o"
   },
   {
     "arguments": [

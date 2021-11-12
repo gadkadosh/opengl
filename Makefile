@@ -13,7 +13,7 @@ $(BUILD_DIR)/opengl: $(OBJS)
 	$(CXX) $(CXXFLAGS) $(FRAMEWORKS) $(LIBS) $^ -o $@
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
-	mkdir -p $(BUILD_DIR)
+	mkdir -p $(dir $@)
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
