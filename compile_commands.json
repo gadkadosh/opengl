@@ -1,18 +1,98 @@
 [
-    {
-        "arguments": [
-            "/usr/local/opt/llvm/bin/clang++",
-            "-g",
-            "-std=c++17",
-            "-I./vendor/GLEW/include",
-            "-I./vendor/GLFW/include",
-            "-c",
-            "-o",
-            "build/Application.o",
-            "src/Application.cpp"
-        ],
-        "directory": "/Users/gadkadosh/Code/opengl",
-        "file": "/Users/gadkadosh/Code/opengl/src/Application.cpp",
-        "output": "/Users/gadkadosh/Code/opengl/build/Application.o"
-    }
+  {
+    "arguments": [
+      "/usr/local/opt/llvm/bin/clang++",
+      "-g",
+      "-std=c++17",
+      "-I./vendor/GLEW/include",
+      "-I./vendor/GLFW/include",
+      "-c",
+      "-o",
+      "build/VertexBuffer.o",
+      "src/VertexBuffer.cpp"
+    ],
+    "directory": "/Users/gadkadosh/Code/opengl",
+    "file": "/Users/gadkadosh/Code/opengl/src/VertexBuffer.cpp",
+    "output": "/Users/gadkadosh/Code/opengl/build/VertexBuffer.o"
+  },
+  {
+    "arguments": [
+      "/usr/local/opt/llvm/bin/clang++",
+      "-g",
+      "-std=c++17",
+      "-I./vendor/GLEW/include",
+      "-I./vendor/GLFW/include",
+      "-c",
+      "-o",
+      "build/VertexArray.o",
+      "src/VertexArray.cpp"
+    ],
+    "directory": "/Users/gadkadosh/Code/opengl",
+    "file": "/Users/gadkadosh/Code/opengl/src/VertexArray.cpp",
+    "output": "/Users/gadkadosh/Code/opengl/build/VertexArray.o"
+  },
+  {
+    "arguments": [
+      "/usr/local/opt/llvm/bin/clang++",
+      "-g",
+      "-std=c++17",
+      "-I./vendor/GLEW/include",
+      "-I./vendor/GLFW/include",
+      "-c",
+      "-o",
+      "build/Shader.o",
+      "src/Shader.cpp"
+    ],
+    "directory": "/Users/gadkadosh/Code/opengl",
+    "file": "/Users/gadkadosh/Code/opengl/src/Shader.cpp",
+    "output": "/Users/gadkadosh/Code/opengl/build/Shader.o"
+  },
+  {
+    "arguments": [
+      "/usr/local/opt/llvm/bin/clang++",
+      "-g",
+      "-std=c++17",
+      "-I./vendor/GLEW/include",
+      "-I./vendor/GLFW/include",
+      "-c",
+      "-o",
+      "build/Application.o",
+      "src/Application.cpp"
+    ],
+    "directory": "/Users/gadkadosh/Code/opengl",
+    "file": "/Users/gadkadosh/Code/opengl/src/Application.cpp",
+    "output": "/Users/gadkadosh/Code/opengl/build/Application.o"
+  },
+  {
+    "arguments": [
+      "/usr/local/opt/llvm/bin/clang++",
+      "-g",
+      "-std=c++17",
+      "-I./vendor/GLEW/include",
+      "-I./vendor/GLFW/include",
+      "-c",
+      "-o",
+      "build/IndexBuffer.o",
+      "src/IndexBuffer.cpp"
+    ],
+    "directory": "/Users/gadkadosh/Code/opengl",
+    "file": "/Users/gadkadosh/Code/opengl/src/IndexBuffer.cpp",
+    "output": "/Users/gadkadosh/Code/opengl/build/IndexBuffer.o"
+  },
+  {
+    "arguments": [
+      "/usr/local/opt/llvm/bin/clang++",
+      "-g",
+      "-std=c++17",
+      "-I./vendor/GLEW/include",
+      "-I./vendor/GLFW/include",
+      "-c",
+      "-o",
+      "build/Renderer.o",
+      "src/Renderer.cpp"
+    ],
+    "directory": "/Users/gadkadosh/Code/opengl",
+    "file": "/Users/gadkadosh/Code/opengl/src/Renderer.cpp",
+    "output": "/Users/gadkadosh/Code/opengl/build/Renderer.o"
+  }
 ]
