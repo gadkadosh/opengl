@@ -10,6 +10,9 @@
 #include "VertexBuffer.h"
 #include "VertexBufferLayout.h"
 
+#include "imgui/imgui.h"
+#include "imgui/imgui_impl_glfw.h"
+#include "imgui/imgui_impl_opengl3.h"
 #include <glm.hpp>
 #include <gtc/matrix_transform.hpp>
 
@@ -25,7 +28,7 @@ int main(void) {
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
   /* Create a windowed mode window and its OpenGL context */
-  window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
+  window = glfwCreateWindow(960, 440, "Hello World", NULL, NULL);
   if (!window) {
     glfwTerminate();
     return -1;
@@ -42,16 +45,15 @@ int main(void) {
   std::cout << glGetString(GL_VERSION) << std::endl;
 
   float positions[] = {
-      -0.5f, -0.5f, 0.0f, 0.0f, // 0
-      0.5f,  -0.5f, 1.0f, 0.0f, // 1
-      0.5f,  0.5f,  1.0f, 1.0f, // 2
-      -0.5f, 0.5f,  0.0f, 1.0f, // 3
+      100.0f, 100.0f, 0.0f, 0.0f, // 0
+      200.0f, 100.0f, 1.0f, 0.0f, // 1
+      200.0f, 200.0f, 1.0f, 1.0f, // 2
+      100.0f, 200.0f, 0.0f, 1.0f, // 3
   };
 
   unsigned int indices[] = {
       0, 1, 2, // 0
       2, 3, 0, // 1
-      4, 2, 3  // 2
   };
 
   GLCall(glEnable(GL_BLEND));
@@ -67,12 +69,12 @@ int main(void) {
 
   IndexBuffer ib(indices, 6);
 
-  glm::mat4 proj = glm::ortho(-1.0f, 1.0f, -1.325f, 1.325f, -1.0f, 1.0f);
+  glm::mat4 proj = glm::ortho(0.0f, 640.0f, 0.0f, 480.0f, -1.0f, 1.0f);
+  glm::mat4 view = glm::translate(glm::mat4(1.0f), glm::vec3(-100, 0, 0));
 
   Shader shader("res/shaders/Basic.shader");
   shader.Bind();
   shader.SetUniform4f("u_Color", 0.8f, 0.2f, 0.3f, 1.0f);
-  shader.SetUniformMat4f("u_MVP", proj);
 
   Texture texture("res/textures/b738.png");
   texture.Bind();
@@ -85,6 +87,14 @@ int main(void) {
 
   Renderer renderer;
 
+  ImGui::CreateContext();
+  ImGui::StyleColorsDark();
+  ImGui_ImplGlfw_InitForOpenGL(window, true);
+  const char *glsl_version = "#version 330";
+  ImGui_ImplOpenGL3_Init(glsl_version);
+
+  glm::vec3 translation(200, 200, 0);
+
   float r = 0.0f;
   float inc = 0.02f;
 
@@ -94,7 +104,15 @@ int main(void) {
 
     renderer.Clear();
 
+    ImGui_ImplOpenGL3_NewFrame();
+    ImGui_ImplGlfw_NewFrame();
+    ImGui::NewFrame();
+
+    glm::mat4 model = glm::translate(glm::mat4(1.0f), translation);
+    glm::mat4 mvp = proj * view * model;
+
     shader.Bind();
+    shader.SetUniformMat4f("u_MVP", mvp);
     shader.SetUniform4f("u_Color", r, 0.8f, 0.3f, 1.0f);
 
     renderer.Draw(va, ib, shader);
@@ -106,12 +124,24 @@ int main(void) {
 
     r += inc;
 
+    {
+      ImGui::SliderFloat3("Translation", &translation.x, 0.0f, 960.0f);
+      ImGui::Text("Application average %.3f ms/frame (%.1f FPS)",
+                  1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+    }
+
+    ImGui::Render();
+    ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
     /* Swap front and back buffers */
     glfwSwapBuffers(window);
 
     /* Poll for and process events */
     glfwPollEvents();
   }
+
+  ImGui_ImplOpenGL3_Shutdown();
+  ImGui_ImplGlfw_Shutdown();
+  ImGui::DestroyContext();
 
   glfwTerminate();
   return 0;

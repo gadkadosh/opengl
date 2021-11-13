@@ -8,11 +8,12 @@ SRC_DIR=src
 BUILD_DIR=build
 SRCS=$(shell find $(SRC_DIR) -name *.cpp)
 OBJS=$(patsubst $(SRC_DIR)/%.cpp,$(BUILD_DIR)/%.o,$(SRCS))
+SHADERS=$(shell find res/shaders/*.shader)
 
 $(BUILD_DIR)/opengl: $(OBJS)
 	$(CXX) $(CXXFLAGS) $(FRAMEWORKS) $(LIBS) $^ -o $@
 
-$(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
+$(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp $(SHADERS)
 	mkdir -p $(dir $@)
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 

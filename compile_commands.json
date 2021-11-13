@@ -26,6 +26,125 @@
       "-I./vendor/glm",
       "-c",
       "-o",
+      "build/imgui/imgui_widgets.o",
+      "src/imgui/imgui_widgets.cpp"
+    ],
+    "directory": "/Users/gadkadosh/Code/opengl",
+    "file": "/Users/gadkadosh/Code/opengl/src/imgui/imgui_widgets.cpp",
+    "output": "/Users/gadkadosh/Code/opengl/build/imgui/imgui_widgets.o"
+  },
+  {
+    "arguments": [
+      "/usr/local/opt/llvm/bin/clang++",
+      "-g",
+      "-std=c++17",
+      "-I./vendor/GLEW/include",
+      "-I./vendor/GLFW/include",
+      "-I./vendor/glm",
+      "-c",
+      "-o",
+      "build/imgui/imgui.o",
+      "src/imgui/imgui.cpp"
+    ],
+    "directory": "/Users/gadkadosh/Code/opengl",
+    "file": "/Users/gadkadosh/Code/opengl/src/imgui/imgui.cpp",
+    "output": "/Users/gadkadosh/Code/opengl/build/imgui/imgui.o"
+  },
+  {
+    "arguments": [
+      "/usr/local/opt/llvm/bin/clang++",
+      "-g",
+      "-std=c++17",
+      "-I./vendor/GLEW/include",
+      "-I./vendor/GLFW/include",
+      "-I./vendor/glm",
+      "-c",
+      "-o",
+      "build/imgui/imgui_impl_opengl3.o",
+      "src/imgui/imgui_impl_opengl3.cpp"
+    ],
+    "directory": "/Users/gadkadosh/Code/opengl",
+    "file": "/Users/gadkadosh/Code/opengl/src/imgui/imgui_impl_opengl3.cpp",
+    "output": "/Users/gadkadosh/Code/opengl/build/imgui/imgui_impl_opengl3.o"
+  },
+  {
+    "arguments": [
+      "/usr/local/opt/llvm/bin/clang++",
+      "-g",
+      "-std=c++17",
+      "-I./vendor/GLEW/include",
+      "-I./vendor/GLFW/include",
+      "-I./vendor/glm",
+      "-c",
+      "-o",
+      "build/imgui/imgui_tables.o",
+      "src/imgui/imgui_tables.cpp"
+    ],
+    "directory": "/Users/gadkadosh/Code/opengl",
+    "file": "/Users/gadkadosh/Code/opengl/src/imgui/imgui_tables.cpp",
+    "output": "/Users/gadkadosh/Code/opengl/build/imgui/imgui_tables.o"
+  },
+  {
+    "arguments": [
+      "/usr/local/opt/llvm/bin/clang++",
+      "-g",
+      "-std=c++17",
+      "-I./vendor/GLEW/include",
+      "-I./vendor/GLFW/include",
+      "-I./vendor/glm",
+      "-c",
+      "-o",
+      "build/imgui/imgui_impl_glfw.o",
+      "src/imgui/imgui_impl_glfw.cpp"
+    ],
+    "directory": "/Users/gadkadosh/Code/opengl",
+    "file": "/Users/gadkadosh/Code/opengl/src/imgui/imgui_impl_glfw.cpp",
+    "output": "/Users/gadkadosh/Code/opengl/build/imgui/imgui_impl_glfw.o"
+  },
+  {
+    "arguments": [
+      "/usr/local/opt/llvm/bin/clang++",
+      "-g",
+      "-std=c++17",
+      "-I./vendor/GLEW/include",
+      "-I./vendor/GLFW/include",
+      "-I./vendor/glm",
+      "-c",
+      "-o",
+      "build/imgui/imgui_demo.o",
+      "src/imgui/imgui_demo.cpp"
+    ],
+    "directory": "/Users/gadkadosh/Code/opengl",
+    "file": "/Users/gadkadosh/Code/opengl/src/imgui/imgui_demo.cpp",
+    "output": "/Users/gadkadosh/Code/opengl/build/imgui/imgui_demo.o"
+  },
+  {
+    "arguments": [
+      "/usr/local/opt/llvm/bin/clang++",
+      "-g",
+      "-std=c++17",
+      "-I./vendor/GLEW/include",
+      "-I./vendor/GLFW/include",
+      "-I./vendor/glm",
+      "-c",
+      "-o",
+      "build/imgui/imgui_draw.o",
+      "src/imgui/imgui_draw.cpp"
+    ],
+    "directory": "/Users/gadkadosh/Code/opengl",
+    "file": "/Users/gadkadosh/Code/opengl/src/imgui/imgui_draw.cpp",
+    "output": "/Users/gadkadosh/Code/opengl/build/imgui/imgui_draw.o"
+  },
+  {
+    "arguments": [
+      "/usr/local/opt/llvm/bin/clang++",
+      "-g",
+      "-std=c++17",
+      "-I./vendor/GLEW/include",
+      "-I./vendor/GLFW/include",
+      "-I./vendor/glm",
+      "-c",
+      "-o",
       "build/VertexArray.o",
       "src/VertexArray.cpp"
     ],
