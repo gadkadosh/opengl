@@ -14,6 +14,7 @@
 #include "imgui/imgui_impl_glfw.h"
 #include "imgui/imgui_impl_opengl3.h"
 #include "test/TestClearColor.h"
+#include "test/TestTriangle.h"
 #include <glm.hpp>
 #include <gtc/matrix_transform.hpp>
 
@@ -56,19 +57,21 @@ int main(void) {
   const char *glsl_version = "#version 330";
   ImGui_ImplOpenGL3_Init(glsl_version);
 
-  test::TestClearColor test;
+  test::TestClearColor testClearColor;
+  test::TestTriangle testTriangle;
 
   while (!glfwWindowShouldClose(window)) {
     renderer.Clear();
 
-    test.OnUpdate(0.0f);
-    test.OnRender();
+    testClearColor.OnRender();
+    testTriangle.OnRender();
 
     ImGui_ImplOpenGL3_NewFrame();
     ImGui_ImplGlfw_NewFrame();
     ImGui::NewFrame();
 
-    test.OnImGuiRender();
+    testClearColor.OnImGuiRender();
+    testTriangle.OnImGuiRender();
 
     ImGui::Render();
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
