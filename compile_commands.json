@@ -28,6 +28,24 @@
       "-I./vendor/glm",
       "-c",
       "-o",
+      "build/test/Test.o",
+      "src/test/Test.cpp"
+    ],
+    "directory": "/Users/gadkadosh/Code/opengl",
+    "file": "/Users/gadkadosh/Code/opengl/src/test/Test.cpp",
+    "output": "/Users/gadkadosh/Code/opengl/build/test/Test.o"
+  },
+  {
+    "arguments": [
+      "/usr/local/opt/llvm/bin/clang++",
+      "-g",
+      "-std=c++17",
+      "-I./src",
+      "-I./vendor/GLEW/include",
+      "-I./vendor/GLFW/include",
+      "-I./vendor/glm",
+      "-c",
+      "-o",
       "build/test/TestClearColor.o",
       "src/test/TestClearColor.cpp"
     ],

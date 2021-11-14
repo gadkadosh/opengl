@@ -20,7 +20,8 @@ bool GLLogCall(const char *function, const char *file, int line);
 
 class Renderer {
 public:
-  void Clear();
+  void Clear() const;
+  void SetClearColor(float color[4]) const;
   void Draw(const VertexArray &va, const IndexBuffer &ib,
             const Shader &shader) const;
 };
