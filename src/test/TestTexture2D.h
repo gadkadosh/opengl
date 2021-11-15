@@ -4,9 +4,6 @@
 #include "Test.h"
 #include "Texture.h"
 
-/* #include "glm.hpp" */
-#include <gtc/matrix_transform.hpp>
-
 namespace test {
 
 class TestTexture2D : public Test {

@@ -4,6 +4,7 @@
 #include "VertexBufferLayout.h"
 
 #include "imgui/imgui.h"
+#include <gtc/matrix_transform.hpp>
 
 namespace test {
 
@@ -12,10 +13,6 @@ TestTexture2D::TestTexture2D()
       m_View(glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 0))),
       m_TranslationA(200, 200, 0), m_TranslationB(400, 200, 0) {
 
-  /* float positions[] = {-0.5f, -0.5f, 0.0f, 0.0f, // */
-  /*                      0.5f,  -0.5f, 1.0f, 0.0f, // */
-  /*                      0.5f,  0.5f,  1.0f, 1.0f, // */
-  /*                      -0.5f, 0.5f,  0.0f, 1.0f}; */
   float positions[] = {-50.0f, -50.0f, 0.0f, 0.0f, //
                        50.0f,  -50.0f, 1.0f, 0.0f, //
                        50.0f,  50.0f,  1.0f, 1.0f, //
@@ -34,9 +31,8 @@ TestTexture2D::TestTexture2D()
 
   m_IndexBuffer = std::make_unique<IndexBuffer>(indices, 6);
 
-  m_Shader = std::make_unique<Shader>("res/shaders/Basic.shader");
+  m_Shader = std::make_unique<Shader>("res/shaders/Texture.shader");
   m_Shader->Bind();
-  m_Shader->SetUniform4f("u_Color", 0.8f, 0.3f, 0.8f, 1.0f);
 
   m_Texture = std::make_unique<Texture>("res/textures/b738.png");
   m_Shader->SetUniform1i("u_Texture", 0);
@@ -70,7 +66,7 @@ void TestTexture2D::OnRender() {
 
 void TestTexture2D::OnImGuiRender() {
   ImGui::SliderFloat("Translation A", &m_TranslationA.x, 0.0f, 960.0f);
-  ImGui::SliderFloat("Translation B", &m_TranslationB.y, 0.0f, 960.0f);
+  ImGui::SliderFloat("Translation B", &m_TranslationB.y, 0.0f, 540.0f);
   ImGui::Text("Application average %.3f ms/frame (%.1f FPS)",
               1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
 }
