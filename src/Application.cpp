@@ -2,23 +2,15 @@
 #include <GLFW/glfw3.h>
 #include <iostream>
 
-#include "IndexBuffer.h"
 #include "Renderer.h"
-#include "Shader.h"
-#include "Texture.h"
-#include "VertexArray.h"
-#include "VertexBuffer.h"
-#include "VertexBufferLayout.h"
 #include "test/Test.h"
 #include "test/TestClearColor.h"
+#include "test/TestTexture2D.h"
+#include "test/TestTriangle.h"
 
 #include "imgui/imgui.h"
 #include "imgui/imgui_impl_glfw.h"
 #include "imgui/imgui_impl_opengl3.h"
-#include "test/TestTriangle.h"
-
-#include <glm.hpp>
-#include <gtc/matrix_transform.hpp>
 
 int main(void) {
   GLFWwindow *window;
@@ -66,6 +58,7 @@ test:
 
   testMenu->RegisterTest<test::TestClearColor>("Clear Color");
   testMenu->RegisterTest<test::TestTriangle>("Triangle");
+  testMenu->RegisterTest<test::TestTexture2D>("Texture 2D");
 
   while (!glfwWindowShouldClose(window)) {
     renderer.Clear();

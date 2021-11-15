@@ -8,21 +8,18 @@
 namespace test {
 
 TestTriangle::TestTriangle()
-    : m_Positions{-1.0f, -1.0f, 1.0f, -1.0f, -0.5f, 1.0f}, m_Color{1.0f, 1.0f,
-                                                                   1.0f, 1.0f} {
-}
+    : m_Positions{-1.0f, -1.0f, 1.0f, -1.0f, -0.5f, 1.0f}, m_Indices{0, 1, 2},
+      m_Color{1.0f, 1.0f, 1.0f, 1.0f} {}
 
 TestTriangle::~TestTriangle() {}
 
 void TestTriangle::OnUpdate(float deltaTime) {}
 
 void TestTriangle::OnRender() {
-  unsigned int indices[] = {0, 1, 2};
-
   VertexBuffer vb(m_Positions, 3 * 2 * sizeof(float));
   VertexBufferLayout layout;
   layout.Push<float>(2);
-  IndexBuffer ib(indices, 3);
+  IndexBuffer ib(m_Indices, 3);
   VertexArray va;
   va.AddBuffer(vb, layout);
 

@@ -15,6 +15,7 @@ public:
 
 private:
   float m_Positions[6];
+  unsigned int m_Indices[3];
   float m_Color[4];
 };
 
